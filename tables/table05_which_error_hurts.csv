@@ -1,0 +1,7 @@
+Business situation,Kind of error that hurts most,Loss that fits,In this simulation,Watch out for
+Budgeting total revenue or total units,"Big misses, in either direction",Squared error (forecasts the mean),"Mean order $97.63, pulled up by 6 corporate orders",A few outliers can steer the whole model
+Describing a typical customer or week,Every dollar of miss counts the same,Absolute error (forecasts the median),"Median order $60.85, barely moved by them",Totals built from medians come up short
+Noisy data with an occasional giant,"Small misses matter, giants shouldn't steer",Huber loss,$2.10 per ad dollar vs. $2.59 with squared error,The switch point (delta) is a judgment call
+Perishable inventory or event staffing,Coming up short,"Pinball loss at a high quantile, set by the cost ratio",q = 0.75 saves $859 a year vs. the squared-error model,The cost ratio has to be estimated honestly
+"Avoiding overspend, overstock, or overstaffing",Having too much,Pinball loss at a low quantile,Waste at 2x the cost of a miss: best quantile about 0.35,Chronic shortages that lose customers
+"Planning for a range, not a single number",Being surprised at either end,"A pair of pinball losses, such as 10% and 90%",A 10% to 90% range about 69 boxes wide held 83% of test weeks,Ranges that are too narrow to be useful
