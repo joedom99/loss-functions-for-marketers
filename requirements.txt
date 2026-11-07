@@ -1,0 +1,6 @@
+# All of these come preinstalled in Google Colab. Install them only to run the notebook locally.
+numpy>=1.24
+pandas>=2.0
+matplotlib>=3.7
+scipy>=1.11
+scikit-learn>=1.3
