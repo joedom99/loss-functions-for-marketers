@@ -12,10 +12,10 @@ Companion notebook for the Marketing Data Science article **"Loss Functions for 
 
 When a predictive model learns from data, it minimizes a **loss function**, the formula that decides how much each mistake costs. The loss you choose decides what the prediction aims for, and the prediction shapes the business decision built on it.
 
-This notebook follows one fictional small online gift-box shop through the two main families of loss functions:
+This notebook follows one fictional small online gift-box shop through two common families of loss functions:
 
-- **Regression losses** for predicting numbers: **squared error**, **absolute error**, **Huber loss**, and **pinball (quantile) loss**. It shows how each one produces a different forecast, how a few very large corporate orders pull squared error, and how matching the loss to an asymmetric business cost (running out vs. throwing away) lowers what the shop actually pays.
-- **Classification losses** for predicting a yes or no: **log loss (cross-entropy)** and **hinge loss**. It shows which past website visitors are worth a retargeting ad, why calibrated probabilities beat yes-or-no answers when dollars are attached, and why the cutoff should come from the costs rather than from 50%.
+- **Regression losses** for predicting numbers on a scale, often continuous, like revenue, or counts, like weekly orders: **squared error**, **absolute error**, **Huber loss**, and **pinball (quantile) loss**. It shows how each one produces a different forecast, how a few very large corporate orders pull squared error, and how matching the loss to an asymmetric business cost (running out vs. throwing away) lowers what the shop actually pays.
+- **Classification losses** for predicting categories, either binary (buy or don't buy) or one of several. The notebook uses the binary case: **log loss (cross-entropy)** and **hinge loss**. It shows which past website visitors are worth a retargeting ad, why honest, detailed probabilities beat yes-or-no answers when dollars are attached, and why the cutoff should come from the costs rather than from 50%.
 
 It's a follow-up to [Objective Functions for Marketers](https://github.com/joedom99/objective-functions-for-marketers), which covered objectives for business decisions. This one covers objectives for learning from data. Gradient descent is coming in a later article.
 
@@ -39,7 +39,7 @@ The notebook is organized into nine sections:
 5. Part 3: When one kind of miss costs more
 6. Part 4: Who should see the retargeting ad?
 7. Part 5: Which kind of error hurts your business more?
-8. Checking the results (28 checks, including cross-checks against scikit-learn)
+8. Checking the results (29 checks: 12 math checks that should hold under any settings and 17 simulation results)
 9. Summary
 
 ## Key Results
@@ -56,7 +56,10 @@ With the default settings:
 
 - **The cutoff comes from the costs.** With a \$3 ad and \$27 in margin per sale, a visitor is worth retargeting above an 11% chance of buying. That cutoff earns \$4,664 per 10,000 visitors. The default 50% cutoff earns \$650, even though it's the most accurate rule (93.7% vs. 85.8%).
 - **A default hinge model can be accurate and useless.** With only about 6% of visitors buying, a hinge model trained the default way predicts that nobody buys: 93.6% accurate, \$0 profit.
-- **Probabilities keep working when costs change.** A cost-weighted hinge model earns \$4,226 at a \$3 ad, but it has to be retrained for every new cost and stops retargeting anyone at \$6. The log-loss model only needs a new cutoff and stays profitable at every ad cost from \$1 to \$10.
+- **A simple rule gets close.** A cost-weighted hinge model reduces to "retarget everyone who added to cart" and earns \$4,226, about 91% of the log-loss result, with no model needed.
+- **Calibration helps, but can't add detail.** Platt scaling lets the hinge model move its cutoff without retraining, but this particular fitted model's scores fall into two clumps, so calibration gives it only two probability levels (3.2% and 21.4%). Both hinge approaches stop retargeting anyone at a \$6 ad, while the log-loss model needs only a new cutoff and stays profitable at every ad cost from \$1 to \$10.
+
+The retargeting example assumes visitors who don't see the ad don't buy during the campaign window, so every purchase counts as incremental. Real campaigns need an incrementality test to measure that.
 
 ## Related Articles
 
@@ -64,6 +67,7 @@ With the default settings:
 - [Is Your Marketing Model Too Accurate?](https://blog.marketingdatascience.ai/is-your-marketing-model-too-accurate-5076f5163326)
 - [What Do You Mean by Mean? A Marketer's Guide to Different Types of Averages](https://blog.marketingdatascience.ai/what-do-you-mean-by-mean-a-marketers-guide-to-different-types-of-averages-52cdbf860907)
 - [When the Numbers Look Wrong: A Marketer's Guide to Anomaly Detection](https://blog.marketingdatascience.ai/when-the-numbers-look-wrong-a-marketers-guide-to-anomaly-detection-3895e22f2fe7)
+- [Measuring Lift: A Marketer's Guide to Incrementality](https://blog.marketingdatascience.ai/measuring-lift-a-marketers-guide-to-incrementality-ab4f57b21cc6)
 - [What Happens Next? Predicting Website Conversions with Logistic Regression](https://blog.marketingdatascience.ai/what-happens-next-predicting-website-conversions-with-logistic-regression-d374875764e2)
 - [Why Many Marketing Models Fail: The Problem of Imbalanced Data](https://blog.marketingdatascience.ai/why-many-marketing-models-fail-the-problem-of-imbalanced-data-ceb8123b80b3)
 
