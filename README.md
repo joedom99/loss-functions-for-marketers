@@ -8,6 +8,8 @@
 
 Companion notebook for the Marketing Data Science article **"Loss Functions for Marketers: How Models Decide What 'Wrong' Means"** on [blog.marketingdatascience.ai](https://blog.marketingdatascience.ai).
 
+## UNDER DEVELOPMENT
+
 ## What This Is
 
 When a predictive model learns from data, it minimizes a **loss function**, the formula that decides how much each mistake costs. The loss you choose decides what the prediction aims for, and the prediction shapes the business decision built on it.
