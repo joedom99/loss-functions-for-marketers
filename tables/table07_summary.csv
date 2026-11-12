@@ -1,0 +1,15 @@
+Result,Value
+"Part 1: Best single order forecast, squared / absolute error",$97.63 / $60.85
+Part 1: Huber / pinball (q = 0.75),$64.40 / $79.66
+Part 1: Change in the mean when the 6 corporate orders are removed,$97.63 to $65.78
+"Part 2: Revenue per ad dollar, squared / absolute / Huber",$2.59 / $2.01 / $2.10
+Part 2: True revenue per ad dollar and breakeven,$1.80 and $2.22
+"Part 3: Boxes prepped per week, squared error vs. pinball",100 vs. 116
+"Part 3: Yearly cost, squared error vs. pinball","$8,412 vs. $7,554"
+Part 3: Yearly savings from matching the loss to the costs,$859 (10%)
+"Part 3: RMSE, squared error vs. pinball",27.1 vs. 33.4 boxes
+Part 3: Lowest-cost quantile vs. cost ratio,0.725 vs. 0.75
+"Part 4: Profit per 10,000 visitors, 50% cutoff vs. cost-based cutoff","$650 vs. $4,664"
+"Part 4: Accuracy, 50% cutoff vs. cost-based cutoff",93.7% vs. 85.8%
+Part 4: Default hinge model,"retargets 0 visitors, 93.6% accurate"
+"Part 4: Cost-weighted hinge vs. log loss, profit","$4,226 vs. $4,664"

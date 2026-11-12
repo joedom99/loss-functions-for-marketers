@@ -1,0 +1,5 @@
+Loss,Best single forecast,What it equals,Without the 6 corporate orders,Change
+Squared error,$97.63,The mean (average) order,$65.78,+48%
+Absolute error,$60.85,The median (middle) order,$60.32,+1%
+Huber (delta $50),$64.40,Between the median and the mean,$63.74,+1%
+Pinball (q = 0.75),$79.66,The 75% quantile: 75% of orders are at or below it,$78.28,+2%
