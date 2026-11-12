@@ -1,6 +1,0 @@
-Decision rule,Visitors retargeted,Buyers reached,Ads wasted,Buyers missed,Accuracy,Profit
-Retarget everyone,"10,000",640,"9,360",0,6.4%,"-$12,734"
-"Log loss, default 50% cutoff",54,30,24,610,93.7%,$650
-"Log loss, cost-based cutoff (11%)","1,447",334,"1,114",306,85.8%,"$4,664"
-"Hinge loss, trained the default way",0,0,0,640,93.6%,$0
-"Hinge loss, weighted by the costs","1,598",334,"1,264",306,84.3%,"$4,226"

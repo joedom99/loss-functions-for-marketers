@@ -1,5 +1,0 @@
-Loss used to fit the model,Revenue per extra ad dollar,Profit per extra ad dollar (45% margin),What the model tells you
-Squared error,$2.59,+$0.16,Ads pay for themselves
-Absolute error,$2.01,-$0.10,Ads lose money
-"Huber (delta $1,500)",$2.10,-$0.05,Ads lose money
-True value (known because it's simulated),$1.80,-$0.19,Ads lose money

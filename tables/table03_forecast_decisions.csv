@@ -1,5 +1,0 @@
-Model trained with,Boxes prepped per week,Weeks short per year,Boxes wasted per year,Orders missed per year,Yearly cost
-Squared error,100,23 of 52,545,519,"$8,412"
-Absolute error,97,26 of 52,447,603,"$9,028"
-Huber (delta 15 boxes),98,25 of 52,497,583,"$8,982"
-Pinball (q = 0.75),116,13 of 52,"1,099",263,"$7,554"
