@@ -6,7 +6,7 @@
 ![Data](https://img.shields.io/badge/data-simulated-6db7ac)
 ![License: MIT](https://img.shields.io/badge/License-MIT-198a53.svg)
 
-Companion notebook for the Marketing Data Science article **"Loss Functions for Marketers: How Models Decide What 'Wrong' Means"** on [blog.marketingdatascience.ai](https://blog.marketingdatascience.ai).
+Companion notebook for the Marketing Data Science article [**"Loss Functions for Marketers: How Models Decide What 'Wrong' Means"**](https://blog.marketingdatascience.ai/loss-functions-for-marketers-how-models-decide-what-wrong-means-1e66a55bc825) on [blog.marketingdatascience.ai](https://blog.marketingdatascience.ai).
 
 ## What This Is
 
